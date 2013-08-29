@@ -32,4 +32,7 @@ So why is this library better?
    time did it consume, how much time was used in all the functions called, how
    much idle time do I have.  Those sorts of stats.
 
-4) You can priorities your functions. Not a biggie, but you can.
+4) A function called by the scheduler can change its priority or its interval
+   each time it is called, as well as removing itself from the scheduler.
+
+5) You can priorities your functions. Not a biggie, but you can.
