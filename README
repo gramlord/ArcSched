@@ -1,0 +1,35 @@
+This is a function scheduler for the Arduino IDE, letting you specify
+when, to milli-second accuracy, a function should be called.
+
+Multiple functions may be scheduled simultaneously.
+
+This can be used for simple things like flashing leds, de-bouncing buttons,
+generating timeouts, through to more complex behaviours such as timing
+external events or providing timed signals to external devices. All done
+with milli-second accuracy.
+
+Anywhere you would consider using delay(), STOP, use ArcSched instead.
+With ArcSched you can have many independent time-critical events happining
+in parallel (well, as close as you can get) instead of 1 when using delay().
+
+In a high-level view ArcNet is similar to the SimpleTimer library, with a
+passing resemblance to Timer (if you squint your eyes a bit).
+
+So why is this library better?
+
+1) You can pass an argument from the function setup code to the called function.
+   Possibly a pointer to some data structure meaningful to your code.
+   Possibly "this", where you have a class instance that needs to use the
+   scheduler to call a function, the function will get a pointer back to the
+   class instance.
+
+2) If the scheduler, through no fault of its own, cannot call the function at
+   exactly the time requested, the function gets to know about it. This is
+   called the "overshoot". Shouldn't happen, but might, and your code will know,
+   and should care, about it.
+
+3) Stats. This library keeps stats. How often was a function called and how much
+   time did it consume, how much time was used in all the functions called, how
+   much idle time do I have.  Those sorts of stats.
+
+4) You can priorities your functions. Not a biggie, but you can.
