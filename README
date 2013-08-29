@@ -9,7 +9,7 @@ external events or providing timed signals to external devices. All done
 with milli-second accuracy.
 
 Anywhere you would consider using delay(), STOP, use ArcSched instead.
-With ArcSched you can have many independent time-critical events happining
+With ArcSched you can have many independent time-dependent events happining
 in parallel (well, as close as you can get) instead of 1 when using delay().
 
 In a high-level view ArcNet is similar to the SimpleTimer library, with a
@@ -30,9 +30,9 @@ So why is this library better?
 
 3) Stats. This library keeps stats. How often was a function called and how much
    time did it consume, how much time was used in all the functions called, how
-   much idle time do I have.  Those sorts of stats.
+   much idle time do I have. Those sorts of stats.
 
-4) A function called by the scheduler can change its priority or its interval
+4) Functions called by the scheduler can change their priority or interval
    each time it is called, as well as removing itself from the scheduler.
 
 5) You can priorities your functions. Not a biggie, but you can.
