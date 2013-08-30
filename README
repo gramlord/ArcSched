@@ -28,11 +28,7 @@ So why is this library better?
    called the "overshoot". Shouldn't happen, but might, and your code will know,
    and should care, about it.
 
-3) Stats. This library keeps stats. How often was a function called and how much
-   time did it consume, how much time was used in all the functions called, how
-   much idle time do I have. Those sorts of stats.
-
-4) Functions called by the scheduler can change their priority or interval
+3) Functions called by the scheduler can change their priority or interval
    each time it is called, as well as removing itself from the scheduler.
 
-5) You can priorities your functions. Not a biggie, but you can.
+4) You can priorities your functions. Not a biggie, but you can.
