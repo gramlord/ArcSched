@@ -12,7 +12,7 @@ Anywhere you would consider using delay(), STOP, use ArcSched instead.
 With ArcSched you can have many independent time-dependent events happening
 in parallel (well, as close as you can get) instead of 1 when using delay().
 
-In a high-level view ArcNet is similar to the SimpleTimer library, with a
+In a high-level view ArcSched is similar to the SimpleTimer library, with a
 passing resemblance to Timer (if you squint your eyes a bit).
 
 So why is this library better?
