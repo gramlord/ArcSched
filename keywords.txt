@@ -1,3 +1,4 @@
+ArcSched	KEYWORD1
 SchedFunctionDetail	KEYWORD1
 SchedDetail	KEYWORD1
 
