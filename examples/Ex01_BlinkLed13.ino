@@ -1,5 +1,4 @@
 /*
-
   This is a simple led 13 blinker. It blinks led 13 on and off 1 second at a time.
   
   Copyright 2013 Graeme Elsworthy, Arcsine Pty Ltd, graeme@arcsine.com.au
@@ -7,9 +6,6 @@
   This program is free software; you can redistribute it and/or
   modify it under the terms of the GNU General Public License
   version 2 as published by the Free Software Foundation.
-  
-  $Id$
-
 */
 
 #include <ArcSched.h>

@@ -1,5 +1,4 @@
 /*
-
   This is a simple led 13 flasher. It flashes led 13 on for 50ms then off for 1950ms.
   It is a slight variation to blinkLed13 in that the interval is varied (either 50ms
   or 1950ms) with eaach call to flashLed13(). See Ex01_BlinkLed13.ino more details.
@@ -9,9 +8,6 @@
   This program is free software; you can redistribute it and/or
   modify it under the terms of the GNU General Public License
   version 2 as published by the Free Software Foundation.
-  
-  $Id$
-
 */
 
 #include <ArcSched.h>

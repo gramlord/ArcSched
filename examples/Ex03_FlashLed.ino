@@ -1,5 +1,4 @@
 /*
-
   This is a simple led flasher. It flashes the led, passed in as an argument, on for
   50ms then off for 1950ms. It is a slight variation to flashLed13 in that the led pin
   to use it passed in as an argument. See Ex01_BlinkLed13.ino and Ex02_FlashLed.ino
@@ -13,9 +12,6 @@
   This program is free software; you can redistribute it and/or
   modify it under the terms of the GNU General Public License
   version 2 as published by the Free Software Foundation.
-  
-  $Id$
-
 */
 
 #include <ArcSched.h>
