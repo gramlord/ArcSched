@@ -26,7 +26,7 @@ void setupBlinkLed13() {
   pinMode(13, OUTPUT);
   digitalWrite(13, HIGH);
   
-  sched.registerFunction(blinkLed13, (void *) 0, "blinkLed13", SchedPriorityLow, sched.seconds(1));
+  (void) sched.registerFunction(blinkLed13, (void *) 0, "blinkLed13", SchedPriorityLow, sched.seconds(1));
 }
 
 // In the setup() function you setup the scheduler first and then the blinker.

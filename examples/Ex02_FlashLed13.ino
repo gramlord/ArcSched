@@ -26,7 +26,7 @@ void setupFlashLed13() {
   pinMode(13, OUTPUT);
   digitalWrite(13, HIGH);
   
-  sched.registerFunction(flashLed13, (void *) 0, "flashLed13", SchedPriorityLow, 50);
+  (void) sched.registerFunction(flashLed13, (void *) 0, "flashLed13", SchedPriorityLow, 50);
 }
 
 void setup() {

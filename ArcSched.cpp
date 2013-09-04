@@ -43,20 +43,17 @@ uint32_t ArcSched::days(uint32_t d) {
 }
 
 // Register a function for use with the scheduler.
-void ArcSched::registerFunction(void (*function)(SchedFunctionDetail *, void *), void *argument, char *name, uint8_t priority, uint32_t interval) {
+bool ArcSched::registerFunction(void (*function)(SchedFunctionDetail *, void *), void *argument, char *name, uint8_t priority, uint32_t interval) {
   SchedDetail *p;
   uint8_t i;
-  static char *noMem = "ArcSched: Insuficient memory.";
 
   p =(SchedDetail *) malloc(sizeof(SchedDetail));
   if(p == (SchedDetail *) 0) {
-    Serial.println(noMem);
-    return;
+    return false;
   }
   p->name = (char *) malloc(strlen(name) + 1);
   if(p->name == (char *) 0) {
-    Serial.println(noMem);
-    return;
+    return false;
   }
   
   p->function = function;
@@ -69,6 +66,8 @@ void ArcSched::registerFunction(void (*function)(SchedFunctionDetail *, void *),
   // add it to the list of scheduled jobs
   p->next = list;
   list = p;
+
+  return true;
 }
 
 // Setup the scheduler.

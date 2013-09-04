@@ -58,7 +58,7 @@ class ArcSched {
     uint32_t minutes(uint32_t s);
     uint32_t hours(uint32_t s);
     uint32_t days(uint32_t s);
-    void registerFunction(void (*function)(SchedFunctionDetail *, void *), void *, char *, uint8_t, uint32_t);
+    bool registerFunction(void (*function)(SchedFunctionDetail *, void *), void *, char *, uint8_t, uint32_t);
     bool deregisterFunction(char *);
     void setup();
     void loop();

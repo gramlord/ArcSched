@@ -30,7 +30,7 @@ void setupFlashLed13() {
   digitalWrite(13, HIGH);
   
   // Pass in (pin) 13 as the argument to be passed to the flashLed() funciton.
-  sched.registerFunction(flashLed, (void *) 13, "flashLed", SchedPriorityLow, 50);
+  (void) sched.registerFunction(flashLed, (void *) 13, "flashLed", SchedPriorityLow, 50);
 }
 
 void setup() {
