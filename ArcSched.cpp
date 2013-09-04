@@ -81,7 +81,6 @@ void ArcSched::loop() {
   SchedDetail *p;
   SchedDetail **pp;
   SchedFunctionDetail fd;
-  uint32_t prevInterval;
 
   for(uint8_t priority = SchedPriorityHigh; priority <= SchedPriorityLow; priority++) {
     for(p = list; p != (SchedDetail *) 0; p = p->next) {
@@ -103,9 +102,8 @@ void ArcSched::loop() {
           } else {
             // Update priority and interval if requested.
             if(fd.priorityFlag) p->priority = fd.priority;
-            prevInterval = p->interval;
+            p->lastRunTime += p->interval;
             if(fd.intervalFlag) p->interval = fd.interval;
-            p->lastRunTime += prevInterval;
           }
         }
       }
@@ -131,7 +129,7 @@ bool ArcSched::deregisterFunction(char *functionName) {
   
   for(p = list; p != (SchedDetail *) 0; p = p->next) {
     if((p->function != (void (*)(SchedFunctionDetail *, void *)) 0) && (strcmp(p->name, functionName) == 0)) {
-      // For now just clear the function pointer. it will be cleaned up at the next invocation of loop().
+      // For now just clear the function pointer. It will be cleaned up at the next invocation of loop().
       p->function = (void (*)(SchedFunctionDetail *, void *)) 0;
       return true;
     }
