@@ -12,7 +12,7 @@ Anywhere you would consider using delay(), STOP, use ArcSched instead.
 With ArcSched you can have many independent time-dependent events happening
 in parallel (well, as close as you can get) instead of 1 when using delay().
 
-In a high-level view ArcSched is similar to the SimpleTimer library, with a
+At a high-level view ArcSched is similar to the SimpleTimer library, with a
 passing resemblance to Timer (if you squint your eyes a bit).
 
 So why is this library better?
@@ -23,12 +23,12 @@ So why is this library better?
    scheduler to call a function, the function will get a pointer back to the
    class instance.
 
-2) If the scheduler, through no fault of its own, cannot call the function at
-   exactly the time requested, the function gets to know about it. This is
+2) If the scheduler, through no fault of its own, cannot call your function
+   at exactly the time requested, the function gets to know about it. This is
    called the "overshoot". Shouldn't happen, but might, and your code will know,
    and should care, about it.
 
 3) Functions called by the scheduler can change their priority or interval
-   each time it is called, as well as removing itself from the scheduler.
+   each time they are called, as well as removing itself from the scheduler.
 
 4) You can priorities your functions. Not a biggie, but you can.
