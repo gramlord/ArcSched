@@ -70,6 +70,20 @@ bool ArcSched::registerFunction(void (*function)(SchedFunctionDetail *, void *),
   return true;
 }
 
+// Make it look like the function has just run.
+bool ArcSched::requeueFunction(char *functionName) {
+  SchedDetail *p;
+  
+  for(p = list; p != (SchedDetail *) 0; p = p->next) {
+    if((p->function != (void (*)(SchedFunctionDetail *, void *)) 0) && (strcmp(p->name, functionName) == 0)) {
+      p->lastRunTime = millis();
+      return true;
+    }
+  }
+
+  return false;
+}
+
 // Setup the scheduler.
 void ArcSched::setup() {
   list = (SchedDetail *) 0;

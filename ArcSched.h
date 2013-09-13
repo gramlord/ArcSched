@@ -60,6 +60,7 @@ class ArcSched {
     uint32_t days(uint32_t s);
     bool registerFunction(void (*function)(SchedFunctionDetail *, void *), void *, char *, uint8_t, uint32_t);
     bool deregisterFunction(char *);
+    bool requeueFunction(char *);
     void setup();
     void loop();
 
